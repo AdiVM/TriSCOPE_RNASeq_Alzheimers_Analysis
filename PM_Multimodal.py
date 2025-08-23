@@ -1,9 +1,9 @@
-# This is the first portion of the TriScope framework. Predictive modeling for gene expression data. 
-# This framework can easily be adapted to include demopgraphic predicotrs (see PM_multimodal.py)
+# This is the first portion of the TriScope framework. Predictive modeling for APOE genotype, Demographics, and Gene expression data. 
+# This framework can easily be adapted to include or exclude other factors (see PM_Gex.py)
 
 # Multirun cell on cell training using both genes and demographics
 
-# This script is the multirun of F1_Cell_oncell_gene_demo_rfe.py
+# For each cell type this script was run 5 times with random seeds 1-5, and experiment type "maximal". 
 import argparse
 import os
 import pandas as pd
