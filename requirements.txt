@@ -1,0 +1,23 @@
+Python:
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+scanpy
+flaml
+scipy
+jupyter
+
+R:
+arrow
+lme4
+dpylr
+glmmTMB
+edgeR
+
+
+This codebase was developed and tested with the following environments:
+
+- **Python** 3.9.21
+- **R** 4.5.1
