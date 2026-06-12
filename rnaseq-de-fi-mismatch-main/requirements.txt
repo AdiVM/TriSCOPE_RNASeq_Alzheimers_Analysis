@@ -1,0 +1,11 @@
+# Runtime dependencies
+lightgbm==4.6.0
+matplotlib==3.10.3
+numpy==2.2.0
+pandas==2.2.3
+pydeseq2==0.5.4
+scikit-learn==1.6.1
+seaborn==0.13.2
+
+# Tooling
+ruff==0.15.11

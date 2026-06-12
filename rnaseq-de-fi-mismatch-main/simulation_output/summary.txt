@@ -1,0 +1,69 @@
+Simulation summary
+==================
+Count model: negative-binomial counts with sample-specific library sizes
+DE model: PyDESeq2 with additive design ~ age + sex_label + disease_label, plus a second PyDESeq2 fit for the sex-by-disease interaction contrast
+ML model: LightGBM on log2-CPM for all genes + age + sex
+LightGBM test ROC AUC: 0.981
+Best boosting iteration after early stopping: 59
+
+Why DE genes can have low tree importance
+-----------------------------------------
+25/25 correlated 'redundant_de' genes are FDR-significant in the PyDESeq2 additive model, but only 13/25 receive non-zero LightGBM gain and only 6/25 land in the top 20 genes by gain.
+These genes all carry overlapping disease information, so the tree ensemble can split on a few representatives and leave the rest with little or zero marginal gain.
+
+Why high-importance genes can fail standard DE
+----------------------------------------------
+Sex-interaction genes: 0/5 are FDR-significant in the additive PyDESeq2 model, but 2/5 have non-zero gain and 0/5 appear in the top 20 by gain. The median disease:sex interaction p-value in the interaction PyDESeq2 model is 4.17e-05.
+Heterogeneous disease genes: 0/5 are FDR-significant, but 5/5 have non-zero gain and 5/5 appear in the top 20. These genes were simulated so the disease group contains high and low subtypes whose mean counts cancel on the raw-count scale, even though the pattern remains predictive.
+Threshold-effect genes: 0/5 are FDR-significant, but 5/5 have non-zero gain and 3/5 appear in the top 20. Disease samples have a rare very-high expression tail balanced by more common mildly low values, so a tree can learn a high-value rule even when the average effect is weak.
+Distribution-shift genes: 0/5 are FDR-significant, but 5/5 have non-zero gain and 4/5 appear in the top 20. Control samples are relatively concentrated near the middle, while disease samples are more dispersed into the tails with the same mean, which helps tree splits more than a mean-shift test.
+
+Interpretation
+--------------
+The disagreement is expected because adjusted DE asks whether one gene has a disease main effect after accounting for covariates, one gene at a time, while LightGBM asks whether a transformed predictor is useful inside a joint nonlinear classifier that can exploit redundancy, thresholds, and interactions.
+
+Top genes by smallest FDR (top 20)
+---------------------------------------
+G007: redundant_de, FDR=1.179e-20, gain=87.08
+G008: redundant_de, FDR=1.685e-20, gain=21.34
+G021: redundant_de, FDR=7.181e-18, gain=3.98
+G003: redundant_de, FDR=7.181e-18, gain=116.68
+G010: redundant_de, FDR=7.246e-18, gain=0.00
+G018: redundant_de, FDR=2.119e-17, gain=0.00
+G013: redundant_de, FDR=3.137e-17, gain=20.85
+G019: redundant_de, FDR=7.993e-17, gain=11.39
+G001: redundant_de, FDR=2.495e-16, gain=0.00
+G009: redundant_de, FDR=2.495e-16, gain=0.00
+G012: redundant_de, FDR=3.128e-16, gain=0.00
+G024: redundant_de, FDR=8.536e-16, gain=5.64
+G020: redundant_de, FDR=1.291e-15, gain=12.39
+G022: redundant_de, FDR=1.453e-15, gain=0.00
+G015: redundant_de, FDR=2.494e-15, gain=0.00
+G005: redundant_de, FDR=5.705e-15, gain=1.34
+G016: redundant_de, FDR=7.687e-15, gain=1.81
+G011: redundant_de, FDR=1.030e-14, gain=0.00
+G014: redundant_de, FDR=5.571e-14, gain=24.07
+G006: redundant_de, FDR=9.847e-14, gain=0.00
+
+Top genes by LightGBM gain (top 20)
+------------------------------------
+G042: distribution_shift, gain=350.19, FDR=9.117e-01
+G033: heterogeneous_disease, gain=321.12, FDR=8.906e-01
+G039: threshold_effect, gain=204.98, FDR=8.502e-01
+G038: threshold_effect, gain=189.93, FDR=2.188e-01
+G036: threshold_effect, gain=146.92, FDR=7.150e-01
+G003: redundant_de, gain=116.68, FDR=7.181e-18
+G007: redundant_de, gain=87.08, FDR=1.179e-20
+G002: redundant_de, gain=68.57, FDR=5.942e-12
+G034: heterogeneous_disease, gain=58.36, FDR=9.267e-01
+G032: heterogeneous_disease, gain=45.99, FDR=8.672e-01
+G040: distribution_shift, gain=44.12, FDR=8.906e-01
+G030: heterogeneous_disease, gain=38.32, FDR=8.906e-01
+G043: distribution_shift, gain=34.35, FDR=8.672e-01
+G130: noise, gain=28.64, FDR=1.597e-01
+G031: heterogeneous_disease, gain=25.99, FDR=8.795e-01
+G108: noise, gain=24.58, FDR=8.857e-01
+G014: redundant_de, gain=24.07, FDR=5.571e-14
+G008: redundant_de, gain=21.34, FDR=1.685e-20
+G013: redundant_de, gain=20.85, FDR=3.137e-17
+G044: distribution_shift, gain=17.97, FDR=8.340e-01
