@@ -1,0 +1,93 @@
+Loading metadata parquet...
+  Metadata shape: (1297754, 11)
+
+Loading h5ad (backed mode)...
+  Total cells in h5ad: 1,395,601
+  Total genes:         36,601
+
+Pre-computing barcode position index...
+  Index built over 1,395,601 barcodes.
+
+============================================================
+  Processing cell type: Ex
+    Total cells: 610,593
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 7
+    Sub-chunk 1/7: cells 0 - 100,000
+      Written sub-chunk 1/7
+    Sub-chunk 2/7: cells 100,000 - 200,000
+      Written sub-chunk 2/7
+    Sub-chunk 3/7: cells 200,000 - 300,000
+      Written sub-chunk 3/7
+    Sub-chunk 4/7: cells 300,000 - 400,000
+      Written sub-chunk 4/7
+    Sub-chunk 5/7: cells 400,000 - 500,000
+      Written sub-chunk 5/7
+    Sub-chunk 6/7: cells 500,000 - 600,000
+      Written sub-chunk 6/7
+    Sub-chunk 7/7: cells 600,000 - 610,593
+      Written sub-chunk 7/7
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Ex.parquet  (29.00 GB)
+
+============================================================
+  Processing cell type: Inh
+    Total cells: 393,273
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 4
+    Sub-chunk 1/4: cells 0 - 100,000
+      Written sub-chunk 1/4
+    Sub-chunk 2/4: cells 100,000 - 200,000
+      Written sub-chunk 2/4
+    Sub-chunk 3/4: cells 200,000 - 300,000
+      Written sub-chunk 3/4
+    Sub-chunk 4/4: cells 300,000 - 393,273
+      Written sub-chunk 4/4
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Inh.parquet  (13.64 GB)
+
+============================================================
+  Processing cell type: Ast
+    Total cells: 83,983
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 1
+    Sub-chunk 1/1: cells 0 - 83,983
+      Written sub-chunk 1/1
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Ast.parquet  (2.07 GB)
+
+============================================================
+  Processing cell type: Oli
+    Total cells: 142,064
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 2
+    Sub-chunk 1/2: cells 0 - 100,000
+      Written sub-chunk 1/2
+    Sub-chunk 2/2: cells 100,000 - 142,064
+      Written sub-chunk 2/2
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Oli.parquet  (2.56 GB)
+
+============================================================
+  Processing cell type: Mic
+    Total cells: 41,187
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 1
+    Sub-chunk 1/1: cells 0 - 41,187
+      Written sub-chunk 1/1
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Mic.parquet  (0.78 GB)
+
+============================================================
+  Processing cell type: Opc
+    Total cells: 26,654
+    Sub-chunk size: 100,000
+    Number of sub-chunks: 1
+    Sub-chunk 1/1: cells 0 - 26,654
+      Written sub-chunk 1/1
+    Saved: /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Opc.parquet  (0.71 GB)
+
+============================================================
+EXTRACTION COMPLETE — files written:
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Ex.parquet  (29.00 GB)
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Inh.parquet  (13.64 GB)
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Ast.parquet  (2.07 GB)
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Oli.parquet  (2.56 GB)
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Mic.parquet  (0.78 GB)
+  /n/groups/patel/adithya/SEAAD_Outputs/SEAAD_Matrix_Opc.parquet  (0.71 GB)
+============================================================

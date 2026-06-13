@@ -1,0 +1,68 @@
+Loading metadata parquet...
+  Metadata shape: (1297754, 11)
+
+Loading h5ad (backed mode)...
+  Total cells in h5ad: 1,395,601
+  Total genes:         36,601
+
+Pre-computing barcode position index...
+  Saved gene list: /n/scratch/users/a/adm808/SEAAD_DEG_input/genes.csv
+
+============================================================
+  Processing cell type: Ast
+    Total cells: 83,983
+    Sub-chunk 1/1: cells 0 - 83,983
+    MTX written: (83,983 x 36,601, 317,001,215 non-zeros)
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ast_counts.mtx
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ast_barcodes.csv
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ast_metadata.csv
+
+============================================================
+  Processing cell type: Oli
+    Total cells: 142,064
+    Sub-chunk 1/2: cells 0 - 100,000
+    Sub-chunk 2/2: cells 100,000 - 142,064
+    MTX written: (142,064 x 36,601, 400,861,827 non-zeros)
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Oli_counts.mtx
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Oli_barcodes.csv
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Oli_metadata.csv
+
+============================================================
+  Processing cell type: Mic
+    Total cells: 41,187
+    Sub-chunk 1/1: cells 0 - 41,187
+    MTX written: (41,187 x 36,601, 111,099,781 non-zeros)
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Mic_counts.mtx
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Mic_barcodes.csv
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Mic_metadata.csv
+
+============================================================
+  Processing cell type: Inh
+    Total cells: 393,273
+    Sub-chunk 1/4: cells 0 - 100,000
+    Sub-chunk 2/4: cells 100,000 - 200,000
+    Sub-chunk 3/4: cells 200,000 - 300,000
+    Sub-chunk 4/4: cells 300,000 - 393,273
+    MTX written: (393,273 x 36,601, 2,080,358,551 non-zeros)
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Inh_counts.mtx
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Inh_barcodes.csv
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Inh_metadata.csv
+
+============================================================
+  Processing cell type: Ex
+    Total cells: 610,593
+    Sub-chunk 1/7: cells 0 - 100,000
+    Sub-chunk 2/7: cells 100,000 - 200,000
+    Sub-chunk 3/7: cells 200,000 - 300,000
+    Sub-chunk 4/7: cells 300,000 - 400,000
+    Sub-chunk 5/7: cells 400,000 - 500,000
+    Sub-chunk 6/7: cells 500,000 - 600,000
+    Sub-chunk 7/7: cells 600,000 - 610,593
+    MTX written: (610,593 x 36,601, 4,424,611,626 non-zeros)
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ex_counts.mtx
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ex_barcodes.csv
+    Saved: /n/scratch/users/a/adm808/SEAAD_DEG_input/Ex_metadata.csv
+
+============================================================
+DONE. Files ready for R DEG pipeline.
+============================================================

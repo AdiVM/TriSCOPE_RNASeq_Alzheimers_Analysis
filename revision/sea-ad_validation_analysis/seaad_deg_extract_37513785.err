@@ -1,0 +1,2 @@
+/var/spool/slurmd/job37513785/slurm_script: line 12: 2296373 Killed                  python /home/adm808/Revision_nat_comms/fresh_later/SEAAD_extract_raw_for_DEG.py
+slurmstepd: error: Detected 1 oom_kill event in StepId=37513785.batch. Some of the step tasks have been OOM Killed.

@@ -1,0 +1,2 @@
+/var/spool/slurmd/job33549651/slurm_script: line 12: 1505129 Killed                  python /home/adm808/Revision_nat_comms/fresh_later/sea_ad_normalization_matrix.py
+slurmstepd: error: Detected 1 oom_kill event in StepId=33549651.batch. Some of the step tasks have been OOM Killed.
