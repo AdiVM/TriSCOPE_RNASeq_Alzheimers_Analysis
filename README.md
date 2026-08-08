@@ -30,4 +30,48 @@ Experimental Design
 2. Differential Expression: Conducted using Poisson GLMMs, controlling for technical and donor covariates. Exact details of model specification and thresholds are provided in the Methods section of the manuscript.
 3. Trajectory Inference: Trajectories were computed with seven random seeds, as specified in Trajectory_Inference.py.
 
+## Installation
+
+Requires Python 3.9.21 and R 4.4.2 (R 4.5.1 for the colocalization step).
+Pinned package versions for all three environments are listed in requirements.txt.
+
+    git clone https://github.com/AdiVM/TriSCOPE_RNASeq_Alzheimers_Analysis.git
+    cd TriSCOPE_RNASeq_Alzheimers_Analysis
+    pip install -r requirements.txt
+
+R packages are installed from CRAN and Bioconductor at the versions listed in
+requirements.txt.
+
+Input and output paths are defined at the top of each script and must be
+updated to point at local copies of the data.
+
+## Running the code
+
+Predictive modeling, per cell type and per split (split index 1 to 5):
+
+    python PM_Gex.py --exp_type maximal --cell_type <cell_type> --split_index 1
+    python PM_Multimodal.py --exp_type maximal --cell_type <cell_type> --split_index 1
+
+Differential expression:
+
+    Rscript Differential_Expression.R
+
+Trajectory inference:
+
+    python Trajectory_Inference.py
+
+GWAS-eQTL colocalization:
+
+    Rscript revision/code/Coloc.R
+
+Figures and tables are produced by the Jupyter notebooks in the repository
+root, which read the outputs written by the scripts above.
+
+## Test data
+
+triscope_synthetic_demo.zip contains a synthetic microglial expression matrix
+and donor metadata under Data/, together with the expected model outputs under
+Expected_Outputs/ and Analysis_Results/, so the predictive modeling pipeline
+can be run end to end without access to the controlled-access cohorts.
+
  
